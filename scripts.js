@@ -14,8 +14,6 @@ function Book(title, author) {
 const postContainer = document.querySelector(".book-list");
 
 function loadBookSection() {
-  // clear all elements in this section
-  postContainer.parentElement.removeChild(postContainer);
   // check the local storage if there is any database for books list
   const bookDB = JSON.parse(localStorage.getItem("bookData"));
   if (bookDB === null || bookDB.length === 0) {
