@@ -3,11 +3,11 @@ const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const form = document.querySelector(".add-book-form");
 
-// constructor function for book objects
+// constructor function
 function Book(title, author) {
   this.title = title;
   this.author = author;
-  this.id = (Math.floor(Math.random()*10000) +1).toString() //unique id declaration
+  this.id = (Math.floor(Math.random()*10000) +1).toString() //unique id
 }
 
 // load book section function
