@@ -124,9 +124,9 @@ Mehmet Selçuk Güler
 
 Joyce Cruz
 
-- GitHub: [@s2jack](https://github.com/s2jack)
-- Twitter: [@1stGuler](https://twitter.com/1stGuler)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/selcuk-guler)
+- GitHub: [@balatstar](https://github.com/balatstar)
+- Twitter: [@balatstar](https://twitter.com/balatstar)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/joyce-ann-cruz-668a41a7)
 
 
 
