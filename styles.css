@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 div,
 p,
 article {
@@ -15,16 +22,18 @@ article {
 
 .book-list,
 .book-update {
-  margin: 0 auto;
   width: 100%;
   max-width: 400px;
 }
 
 .book-list {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #000;
 }
 
 .book-item {
+  width: 100%;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
@@ -43,6 +52,7 @@ article {
 }
 
 .book-update {
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -59,4 +69,10 @@ article {
   background-color: #fff;
   border: 1px solid #000;
   box-shadow: 2px 2px #000;
+}
+
+#seperator {
+  border: 1px solid #000;
+  width: 50px;
+  height: 1px;
 }
