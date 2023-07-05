@@ -18,7 +18,7 @@ bookListHeading.className = 'heading'
 bookListHeading.innerText = 'All Awesome Books'
 bookListSection.appendChild(bookListHeading)
 const bookListContainer = document.createElement('div');
-bookListContainer.className = 'book-list'
+bookListContainer.className = 'book-list border full-width'
 bookListSection.appendChild(bookListContainer)
 
 class BookList {
@@ -42,7 +42,7 @@ class BookList {
       bookListContainer.appendChild(postElement);
       // create a remove button for each book and give it the same id as the book object
       const removeBtn = document.createElement("button");
-      removeBtn.className = "remove-btn";
+      removeBtn.className = "remove-btn border";
       removeBtn.innerText = "Remove";
       removeBtn.id = book.id;
       postElement.appendChild(removeBtn);
