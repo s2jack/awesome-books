@@ -22,6 +22,11 @@
   border: 1px solid #000;
 }
 
+body {
+  height: 95vh;
+  gap: 20px;
+}
+
 div,
 p,
 article {
@@ -61,6 +66,14 @@ article {
   margin: 2px 0;
   padding: 5px 10px;
   width: 100%;
+}
+
+nav ul li button {
+  box-sizing: unset;
+  padding: 0;
+  border-style: none;
+  background-color: unset;
+  cursor: pointer;
 }
 
 .add-book-form button {
@@ -105,5 +118,11 @@ nav ul {
 }
 
 footer {
+  margin-top: auto;
   padding: 10px;
 }
+
+/* nav ul :nth-child(3) a{
+  color: rgba(100, 126, 255, 1);
+}
+*/
