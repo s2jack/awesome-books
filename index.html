@@ -7,12 +7,22 @@
     <title>All Awesome Books</title>
 </head>
 <body class="flex-col">
-    <header>
+    <header class="flex-col">
+        <nav class="flex">
+            <div id="logo-type">Awesome Books</div>
+            <ul class="menu flex">
+                <li class="menu-item">List</li>
+                <div class="seperator"></div>
+                <li class="menu-item">Add new</li>
+                <div class="seperator"></div>
+                <li class="menu-item">Contact</li>
+            </ul>
+        </nav>
+        <div id="date">March 23, 2023 19:06:50</div>
     </header>
     <section class="book-list-section flex-col">
     </section>
     <section class="book-update flex-col">
-        <div id="seperator"></div>
         <h2 class="form-header">Add a new book</h2>
         <form class="add-book-form">
             <p><input id="title" type="text" placeholder="Title"></p>
