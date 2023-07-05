@@ -16,19 +16,19 @@ article {
   padding: 0;
 }
 
-.header {
+.heading,
+.note-text {
   text-align: center;
 }
 
 .book-list,
+.book-list-section,
 .book-update {
   width: 100%;
   max-width: 400px;
 }
 
 .book-list {
-  display: flex;
-  flex-direction: column;
   border: 1px solid #000;
 }
 

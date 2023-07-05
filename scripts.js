@@ -12,14 +12,24 @@ class Book {
 }
 
 // load book section function
-const postContainer = document.querySelector(".book-list");
+const bookListSection = document.querySelector(".book-list-section");
+const bookListHeading = document.createElement('h1')
+bookListHeading.className = 'heading'
+bookListHeading.innerText = 'All Awesome Books'
+bookListSection.appendChild(bookListHeading)
+const bookListContainer = document.createElement('div');
+bookListContainer.className = 'book-list'
+bookListSection.appendChild(bookListContainer)
 
 class BookList {
   static loadBookSection() {
     // check the local storage if there is any database for books list
     const bookDB = JSON.parse(localStorage.getItem("bookData"));
     if (bookDB === null || bookDB.length === 0) {
-      // exit before
+      const noteText = document.createElement('p')
+      noteText.innerText = 'Please add some books to your list'
+      noteText.className = 'note-text'
+      bookListContainer.appendChild(noteText)
       return;
     }
     // if there is data, create a card for each element
@@ -29,7 +39,7 @@ class BookList {
       postElement.innerHTML = `
         <p class="book-title">"${book.title}" by ${book.author}</p>
       `;
-      postContainer.appendChild(postElement);
+      bookListContainer.appendChild(postElement);
       // create a remove button for each book and give it the same id as the book object
       const removeBtn = document.createElement("button");
       removeBtn.className = "remove-btn";
