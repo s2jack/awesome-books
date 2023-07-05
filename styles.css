@@ -41,7 +41,7 @@ article {
 }
 
 .book-item:nth-child(odd) {
-  background-color: #CCC;
+  background-color: #ccc;
 }
 
 .remove-btn {
