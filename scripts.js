@@ -1,7 +1,13 @@
 // variables
-const titleInput = document.querySelector("#title");
-const authorInput = document.querySelector("#author");
-const form = document.querySelector(".add-book-form");
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+// const form = document.querySelector('.add-book-form');
+const addButton = document.querySelector('.add-btn');
+const listButton = document.querySelector('.menu :nth-child(1) button');
+const addBookButton = document.querySelector('.menu :nth-child(3) button');
+const contactButton = document.querySelector('.menu :nth-child(5) button');
+const addBookSection = document.querySelector('#add-book-section');
+const contactSection = document.querySelector('#contact-section');
 
 class Book {
   constructor(title, author) {
@@ -12,15 +18,37 @@ class Book {
 }
 
 // load book section function
-const postContainer = document.querySelector(".book-list");
+const bookListSection = document.querySelector(".book-list-section");
+const bookListHeading = document.createElement('h1')
+bookListHeading.className = 'heading'
+bookListHeading.innerText = 'All Awesome Books'
+bookListSection.appendChild(bookListHeading)
+const bookListContainer = document.createElement('div');
+bookListContainer.className = 'book-list border full-width'
+bookListSection.appendChild(bookListContainer)
 
 class BookList {
   static loadBookSection() {
-    // check the local storage if there is any database for books list
     const bookDB = JSON.parse(localStorage.getItem("bookData"));
+    listButton.style = 'color: rgba(100, 126, 255, 1);';
+    addBookButton.style = '';
+    contactButton.style = '';
+    bookListSection.style = '';
+    addBookSection.style = 'display: none;'
+    contactSection.style = 'display: none;'
+    // check the local storage if there is any database for books list
     if (bookDB === null || bookDB.length === 0) {
-      // exit before
-      return;
+    // if booklistContainer has a child element return
+      if (bookListContainer.hasChildNodes()) {
+        return
+    // if bookListContiner has no child put a text. it means user has no any book added at your bookList
+      } else {
+        const noteText = document.createElement('p')
+        noteText.innerText = 'Please add some books to your list'
+        noteText.className = 'note-text'
+        bookListContainer.appendChild(noteText)
+        return;
+      }
     }
     // if there is data, create a card for each element
     bookDB.forEach((book) => {
@@ -29,16 +57,43 @@ class BookList {
       postElement.innerHTML = `
         <p class="book-title">"${book.title}" by ${book.author}</p>
       `;
-      postContainer.appendChild(postElement);
+      bookListContainer.appendChild(postElement);
       // create a remove button for each book and give it the same id as the book object
       const removeBtn = document.createElement("button");
-      removeBtn.className = "remove-btn";
+      removeBtn.className = "remove-btn border";
       removeBtn.innerText = "Remove";
       removeBtn.id = book.id;
       postElement.appendChild(removeBtn);
       // add event listener for each remove button to run removeBook function
       removeBtn.addEventListener("click", BookList.removeBook);
     });
+  }
+
+  static openAddBookSection() {
+    listButton.style = ''
+    addBookButton.style = 'color: rgba(100, 126, 255, 1);'
+    contactButton.style = ''
+    addBookSection.style = ''
+    contactSection.style = 'display: none;'
+    bookListSection.style = 'display: none;'
+  }
+
+  static openBookListSection() {
+    listButton.style = 'color: rgba(100, 126, 255, 1);';
+    addBookButton.style = '';
+    contactButton.style = '';
+    bookListSection.style = '';
+    addBookSection.style = 'display: none;';
+    contactSection.style = 'display: none;';
+  }
+
+  static openContactSection () {
+    listButton.style = '';
+    addBookButton.style = '';
+    contactButton.style = 'color: rgba(100, 126, 255, 1);';
+    bookListSection.style = 'display: none;';
+    addBookSection.style = 'display: none;';
+    contactSection.style = '';
   }
 
   static addBook() {
@@ -53,6 +108,7 @@ class BookList {
       // set the new array as bookDatabase
       localStorage.setItem("bookData", JSON.stringify(newBookData));
     }
+    BookList.openAddBookSection();
   }
 
   static removeBook(event) {
@@ -72,4 +128,12 @@ class BookList {
 // run load book section function immediately
 BookList.loadBookSection();
 
-form.addEventListener("submit", BookList.addBook);
+// form.addEventListener("submit", BookList.addBook);
+
+
+// Menu functionallity
+addButton.addEventListener('click', BookList.addBook);
+listButton.addEventListener('click', BookList.openBookListSection);
+addBookButton.addEventListener('click', BookList.openAddBookSection);
+contactButton.addEventListener('click', BookList.openContactSection);
+

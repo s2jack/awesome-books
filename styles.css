@@ -9,6 +9,24 @@
   align-items: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.full-width {
+  width: 100%;
+  max-width: 400px;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+body {
+  height: 95vh;
+  gap: 20px;
+}
+
 div,
 p,
 article {
@@ -16,20 +34,9 @@ article {
   padding: 0;
 }
 
-.header {
+.heading,
+.note-text {
   text-align: center;
-}
-
-.book-list,
-.book-update {
-  width: 100%;
-  max-width: 400px;
-}
-
-.book-list {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #000;
 }
 
 .book-item {
@@ -47,7 +54,6 @@ article {
 .remove-btn {
   padding: 0 20px;
   background-color: #fff;
-  border: 1px solid #000;
   box-shadow: 2px 2px #000;
 }
 
@@ -62,17 +68,56 @@ article {
   width: 100%;
 }
 
+nav ul li button {
+  box-sizing: unset;
+  padding: 0;
+  border-style: none;
+  background-color: unset;
+  cursor: pointer;
+}
+
 .add-book-form button {
   float: right;
   margin: 2px 0;
   padding: 0 20px;
   background-color: #fff;
-  border: 1px solid #000;
   box-shadow: 2px 2px #000;
 }
 
-#seperator {
-  border: 1px solid #000;
-  width: 50px;
-  height: 1px;
+.seperator {
+  height: 20px;
+  width: 1px;
+}
+
+nav {
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+nav ul {
+  width: 40%;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#date {
+  margin-left: auto;
+}
+
+#contact-sub-text {
+  width: 70%;
+}
+
+#contact-info {
+  width: 70%;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
 }

@@ -4,23 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
-    <title>All Awesome Books</title>
+    <title>All awesome books</title>
 </head>
 <body class="flex-col">
-    <header>
-        <h1 class="header">All awesome books</h1>
+    <header class="flex-col full-width ">
+        <nav class="flex border full-width">
+            <div id="logo-type">Awesome Books</div>
+            <ul class="menu flex">
+                <li class="menu-item"><button>List</button></li>
+                <div class="seperator border"></div>
+                <li class="menu-item"><button>Add new</button></li>
+                <div class="seperator border"></div>
+                <li class="menu-item"><button>Contact</button></li>
+            </ul>
+        </nav>
+        <div id="date">March 23, 2023 19:06:50</div>
     </header>
-    <section class="book-list flex-col">
+    <section class="book-list-section flex-col full-width " id="book-list-section">
     </section>
-    <section class="book-update flex-col">
-        <div id="seperator"></div>
+    <section class="book-update flex-col full-width " id="add-book-section">
         <h2 class="form-header">Add a new book</h2>
         <form class="add-book-form">
             <p><input id="title" type="text" placeholder="Title"></p>
             <p><input id="author" type="text" placeholder="Author"></p>
-            <button class="add-btn">Add</button>
+            <button class="add-btn button">Add</button>
         </form>
     </section>
+    <section id="contact-section" class="flex-col">
+        <h1>Contact information</h1>
+        <p id="contact-sub-text">
+            Do have any questions or you just want to say "Hello"?
+            You can reach out to us!
+        </p>
+        <ul id="contact-info">
+            <li>Our email: mail@mail.com</li>
+            <li>Our phone number: 0043586634488</li>
+            <li>Our address: Streetname 22, 8463 City, Country</li>
+        </ul>
+    </section>
+    <footer class="border full-width">
+        Copyright ...
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
